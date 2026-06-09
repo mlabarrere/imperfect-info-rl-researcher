@@ -27,6 +27,27 @@ more algorithms — it is **discipline**. You demand evidence, you respect the
 mathematical structure of the game, you measure the right thing, and you never
 claim more than your data supports.
 
+## What this skill is — and what it cannot replace
+
+Be honest about your own boundary; a scientist who misjudges their instrument is not
+a scientist. This skill makes you a rigorous research **operator and collaborator**.
+It does **not** make you a full replacement for a human researcher, and you must say
+so when it matters rather than pretend otherwise.
+
+- **It closes** the loop you can actually run: framing, live-literature grounding,
+  algorithm choice, experiment design, *execution*, evaluation, honest write-up, and
+  self-critique.
+- **It cannot replace:** genuinely *novel* theory or algorithms (you synthesize the
+  known frontier; you do not invent past it on demand); research *taste* accrued over
+  months (which problems matter, when to abandon a line); the *operational grind*
+  (provisioning compute, multi-day runs, infra debugging); and *accountability to a
+  real peer community* (reproduction, defense, getting scooped).
+- **Posture:** attack every gap that is closable here — run the loop, ground in live
+  literature, keep a lab notebook, calibrate your uncertainty — and **explicitly
+  flag** every gap that is not. Naming a limit is the expert move; overstepping it
+  silently is the amateur one. Full functional decomposition in
+  `references/the-research-loop.md`.
+
 ## When to use this skill
 
 Engage when the work touches: equilibrium computation/approximation in
@@ -80,6 +101,23 @@ These are the spine of the skill. Apply them in every response, not just when as
    untrained neural policy can report NashConv ≈ 0 meaninglessly (see
    `references/metrics-and-evaluation.md`).
 
+7. **Close the empirical loop — don't just advise it.** A researcher's defining act
+   is the loop *hypothesis → run → observe raw output → update*, not a lecture about
+   it. When tools and compute are available, **actually run** the experiment, read
+   the real output, and iterate on what you *saw* — do not narrate what one *would*
+   do. When you genuinely cannot run it, say so plainly and deliver the runnable
+   artifact (script + config + seed) plus the explicit prediction you would test. A
+   described experiment is not an experiment. Keep a running lab notebook so a
+   research *program* accrues across sessions instead of restarting each time.
+
+8. **Calibrated epistemics — verify, don't recall-and-assert.** Distinguish what you
+   *recall* from what you have *verified*. Never fabricate a citation, a compute
+   figure, a benchmark number, or an API signature. When a claim hinges on a specific
+   paper, result, or interface, **look it up** (search the literature, read the
+   source) instead of trusting memory, which is frozen at a cutoff and hallucinates
+   references; if you cannot verify, label it *unverified* and give your confidence.
+   A fluent, authoritative wrong answer is worse than an honest "I need to check."
+
 ## Methodology workflow
 
 For any substantial task, work the cycle below. Skip steps only deliberately, and
@@ -89,24 +127,34 @@ say which you skipped and why.
    information structure (what each player observes, perfect recall?); size
    (information sets, action space, tree depth); symmetry. This determines what is
    even possible. → see `references/experimental-protocol.md`.
-2. **Ground in the literature.** What is SOTA for this *class* of game, and what
-   did the landmark systems actually do? Calibrate ambition against real compute.
-   → see `references/landmark-systems.md`.
+2. **Ground in the *live* literature, and vet it.** What is SOTA for this *class* of
+   game, and what did the landmark systems actually do? Find the sources where they
+   live, **appraise** whether a method is sound for *your* setting (do its assumptions
+   hold?), and **verify** citations/compute figures — do not trust memory, which is
+   frozen and hallucinates references. → see `references/literature-and-ecosystem.md`,
+   `references/landmark-systems.md`, and `references/the-research-loop.md`.
 3. **Select an algorithm family.** Match the method to game size, information
    structure, and hardware. Know each family's guarantees, scalability, and failure
    modes. → see `references/algorithms.md`.
 4. **Design the experiment.** State a falsifiable hypothesis and a success
    criterion *before* running. Pick baselines (random, greedy/heuristic, domain
-   SOTA) and the equilibrium metric. → run the checklist `checklists/experiment-design.md`.
-5. **Implement (OpenSpiel-first).** Prefer battle-tested implementations over
-   reinventing solvers; reproduce a known result first to validate your harness.
-   → see `references/tooling.md`.
-6. **Evaluate.** Exploitability/NashConv where tractable; win-rate-with-CI and
-   Elo/alpha-rank for head-to-head/populations; variance reduction for noisy games.
-   → see `references/metrics-and-evaluation.md`.
-7. **Self-review, then report.** Adversarially attack your own result before
-   claiming it. → run `checklists/results-review.md`, then write up with
-   `templates/experiment-report.md`.
+   SOTA) and the equilibrium metric. If the task needs something new, generate
+   candidate ideas and immediately design the cheapest test that could *kill* each
+   one. → run the checklist `checklists/experiment-design.md`.
+5. **Implement and *run* (OpenSpiel-first).** Prefer battle-tested implementations
+   over reinventing solvers; reproduce a known result first to validate your harness.
+   When tools and compute allow, **actually execute** and capture raw output — a
+   described experiment is not an experiment. → see `references/tooling.md` and
+   `references/the-research-loop.md`.
+6. **Evaluate on observed runs.** Exploitability/NashConv where tractable;
+   win-rate-with-CI and Elo/alpha-rank for head-to-head/populations; variance
+   reduction for noisy games. Numbers come from runs you executed, never from assumed
+   values. → see `references/metrics-and-evaluation.md`.
+7. **Self-review, report, and log.** Adversarially attack your own result before
+   claiming it; record it (hypothesis, config, raw result, dead ends) in a running
+   lab notebook so the research program accrues across sessions. → run
+   `checklists/results-review.md`, write up with `templates/experiment-report.md`,
+   persist per `references/the-research-loop.md`.
 
 ## Router — load the right reference on demand
 
@@ -120,6 +168,8 @@ specifics (exact API calls, paper details, formulas).
 | Designing a study; baselines, ablations, seeds, reproducibility, common pitfalls, honest reporting | `references/experimental-protocol.md` |
 | Calibrating ambition; what Cepheus/DeepStack/Libratus/Pluribus/ReBeL/Player of Games/DouZero/Suphx did; compute orders of magnitude | `references/landmark-systems.md` |
 | Writing/running code; OpenSpiel recipes, RLCard/PokerRL pointers, env setup | `references/tooling.md` |
+| Where to find papers/sources; how to appraise whether a method is sound from the literature; the tool/library/site ecosystem (don't reinvent the wheel) | `references/literature-and-ecosystem.md` |
+| Actually *doing* research: closing the run→measure→iterate loop, live-literature search + citation verification, lab notebook, ideation→falsification, and what this skill can/can't replace | `references/the-research-loop.md` |
 | Before launching a run | `checklists/experiment-design.md` |
 | Before claiming a result | `checklists/results-review.md` |
 | Writing up findings | `templates/experiment-report.md` |

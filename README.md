@@ -37,7 +37,9 @@ imperfect-info-rl-researcher/
 │   ├── metrics-and-evaluation.md  # exploitability, NashConv, LBR, CIs, Elo, alpha-rank, AIVAT
 │   ├── experimental-protocol.md   # hypothesis-driven workflow + common failure modes
 │   ├── landmark-systems.md        # Cepheus/DeepStack/Libratus/Pluribus/ReBeL/… + compute calibration
-│   └── tooling.md                 # OpenSpiel recipes + ecosystem pointers
+│   ├── tooling.md                 # OpenSpiel recipes + ecosystem pointers
+│   ├── literature-and-ecosystem.md # where to find papers; appraising soundness; tool/library/site map
+│   └── the-research-loop.md       # closing the empirical loop; live grounding; lab notebook; the skill's limits
 ├── checklists/
 │   ├── experiment-design.md       # before launching a run
 │   └── results-review.md          # before claiming a result
