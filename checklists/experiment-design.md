@@ -14,6 +14,17 @@ record it as a known limitation. Do not start "to see what happens".
 - [ ] A **success criterion** (threshold + metric) is fixed *now*, before results.
 - [ ] The relevant question is named: progress-to-equilibrium vs strength-vs-opponent.
 
+## Scientific validity
+- [ ] Claim type is named: descriptive, comparative, equilibrium, algorithmic,
+      theoretical, or generalization.
+- [ ] Solution concept matches the game class (not blindly "Nash" for every setting).
+- [ ] Any theorem/guarantee being used has its assumptions listed and checked.
+- [ ] Construct/internal/external/statistical validity threats are written down.
+- [ ] Any abstraction or reduced game is labeled as lossless or lossy; the target of
+      the claim (full game vs proxy game) is explicit.
+- [ ] Each consequential decision has passed the elite peer-review challenge:
+      strongest objection, required evidence, and resolution are recorded.
+
 ## Method & feasibility
 - [ ] Algorithm family matches game size + information structure + hardware
       (`references/algorithms.md`).

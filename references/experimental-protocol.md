@@ -22,6 +22,21 @@ Write down, explicitly:
 This framing dictates the algorithm family (`algorithms.md`) and the achievable
 metric (`metrics-and-evaluation.md`).
 
+## 0.5 Scientific validity gate
+
+Before choosing an algorithm, read `references/scientific-validity.md` and record:
+
+- the **claim type** (descriptive, comparative, equilibrium, algorithmic,
+  theoretical, or generalization);
+- the **solution concept** that matches the game, not the one that is easiest to
+  measure;
+- the **theorem assumptions** you are relying on, and whether they actually hold;
+- the main **construct, internal, external, and statistical validity** threats;
+- whether any abstraction/reduction changes the game being studied.
+
+If this gate fails, fix the scientific question before running code. An invalid
+scientific question does not become valid after a clean training run.
+
 ---
 
 ## 1. Hypothesis-driven workflow

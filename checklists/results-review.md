@@ -10,6 +10,18 @@ or disclose **before** you write "it works".
 - [ ] Did you report the metric you think you reported? (NashConv vs exploitability;
       average vs current strategy.)
 
+## Is the scientific claim valid?
+- [ ] Claim type is stated, and the evidence meets that claim type's burden
+      (`references/scientific-validity.md`).
+- [ ] The solution concept is appropriate for the game class.
+- [ ] The theorem/guarantee, if any, applies under the actual assumptions used.
+- [ ] Construct validity holds: the metric measures the thing claimed.
+- [ ] External validity is not overstated beyond the tested games/proxy.
+- [ ] Abstractions/reductions are disclosed, and the claim says where the result
+      lives (full game, abstract game, shrunk game, or opponent distribution).
+- [ ] The claim survived an elite peer-review challenge, or the unresolved objections
+      are listed as limitations.
+
 ## Is it an artifact?
 - [ ] NashConv ≈ 0 — did you rule out the untrained/degenerate-policy artifact
       (distribution validity, comparison to uniform baseline, cross-check with strength)?

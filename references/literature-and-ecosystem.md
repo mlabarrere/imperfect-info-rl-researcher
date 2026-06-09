@@ -14,6 +14,13 @@ instead of rebuilding it badly. Pairs with `references/the-research-loop.md` §3
 
 ## 1. Where the information lives — a sourcing map
 
+Start with the closest practical prior art, not with moonshot theory. A strong
+researcher checks whether a master thesis, student project, benchmark repo, course
+report, or issue thread already solved the boring version of the problem before
+proposing a new algorithm. These sources are not automatically authoritative, but they
+often reveal implementation traps, baseline choices, game encodings, and negative
+results that never make it into polished papers.
+
 **Find papers (and their code/citations):**
 - **arXiv** — preprints; the relevant categories are `cs.GT` (game theory),
   `cs.LG`/`stat.ML` (learning), `cs.MA` (multi-agent), `cs.AI`. Fast but **not
@@ -31,6 +38,20 @@ instead of rebuilding it badly. Pairs with `references/the-research-loop.md` §3
   quickly and finding the seminal node.
 - **DBLP** — clean bibliographic records and venue listings (authoritative for
   author/venue/year when verifying a citation).
+
+**Find practical and student-level prior art:**
+- University repositories for **master's theses, PhD theses, capstone projects, and
+  course reports**. Search for the exact game name plus "CFR", "OpenSpiel",
+  "self-play", "bot", "thesis", "project", or "report".
+- GitHub/GitLab repositories, forks, issues, pull requests, READMEs, and experiment
+  logs. Treat code that actually runs on the target game as evidence of feasibility,
+  not as proof of correctness.
+- Competition write-ups, benchmark leaderboards, Kaggle/Colab notebooks, ACPC-style
+  agent descriptions, and course project pages. They often identify the obvious
+  baseline and the hidden engineering constraints.
+- Blog posts and lab notes from students or practitioners. Use them to discover
+  pitfalls and pointers; verify scientific claims through papers, code, or your own
+  runs.
 
 **The venues that matter in this field** (to gauge peer-review rigor and to browse):
 NeurIPS, ICML, ICLR (learning); AAMAS, IJCAI, AAAI, UAI (agents/AI); EC (Economics &
@@ -93,6 +114,25 @@ under <assumptions> — which hold/don't hold for us because …; independently 
 by <…> / not yet reproduced; later work <ref> qualifies it by …; verdict: sound to
 adopt | adopt with caveat | not yet trustworthy."*
 
+## 2.5 Practical-prior-art pass — avoid reinventing the wheel
+
+Before proposing a novel method, do a short, explicit prior-art pass:
+
+1. Search the **exact game / environment name** plus algorithm families and practical
+   terms: `CFR`, `MCCFR`, `Deep CFR`, `NFSP`, `OpenSpiel`, `RLCard`, `bot`,
+   `baseline`, `thesis`, `student project`, `course project`, `report`, `GitHub`.
+2. Identify the **nearest working baseline**: even an imperfect student repo can be
+   the right starting point if it encodes the game correctly and reports failures.
+3. Extract practical facts: state/action encoding, observation leakage risks,
+   baseline bots, evaluation scripts, compute required, and negative results.
+4. Separate **usable artifact** from **scientific claim**. A thesis or repo can tell
+   you what to try first; it does not establish SOTA unless evaluated rigorously.
+5. Only then ask whether a new paper-level idea is needed. If existing baselines have
+   not been run fairly, the next scientific act is reproduction, not invention.
+
+Default posture: **read the nearby, concrete literature first**. Do not jump to a
+new algorithm because the obvious baseline feels unglamorous.
+
 ---
 
 ## 3. The ecosystem — build on it, don't rebuild it
@@ -130,5 +170,6 @@ seeing this?" and for current practice — but **community consensus is not evid
 route claims back through §2.
 
 **Rule of thumb:** before writing a solver, an evaluator, an env, or a metric, spend
-five minutes checking whether OpenSpiel / RLCard / Papers with Code already has it. The
-wheel is usually round already; your contribution should be the part that isn't.
+five minutes checking whether OpenSpiel / RLCard / Papers with Code / GitHub / theses
+and project reports already have it. The wheel is usually round already; your
+contribution should be the part that isn't.

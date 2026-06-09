@@ -6,8 +6,12 @@
 ## 1. Context & hypothesis
 - **Game:** <name; players; zero-sum?; info structure; size (info sets / actions / depth)>
 - **Question:** <progress-to-equilibrium | strength-vs-opponent>
+- **Claim type:** <descriptive | comparative | equilibrium | algorithmic | theoretical | generalization>
+- **Solution concept:** <Nash/minimax | CE/CCE | alpha-rank/population | team objective | opponent-distribution performance>
 - **Hypothesis (falsifiable):** <e.g. "CFR+ drives exploitability < 0.01 on Leduc within 1e4 iters">
 - **Success criterion (pre-registered):** <threshold + metric, decided before the run>
+- **Scientific validity assumptions:** <theorem assumptions; perfect recall; bounded payoffs; abstraction status; what would invalidate the claim>
+- **Elite reviewer challenge:** <strongest objection; evidence required; resolution or limitation>
 
 ## 2. Setup
 - **Method:** <algorithm + key hyperparameters>
@@ -43,7 +47,7 @@
 
 ## 6. Remaining uncertainty & limitations
 - <metric limitations (e.g. LBR lower bound); compute ceiling; single-game scope;
-  seeds run; what was NOT run>
+  seeds run; construct/internal/external/statistical validity threats; what was NOT run>
 
 ## 7. Verdict
 - <one honest sentence: what is now established, and what is not>

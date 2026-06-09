@@ -22,6 +22,10 @@ self-review → report honestly.
 It covers, among others:
 - **Algorithms:** CFR / CFR+ / DCFR, MCCFR, Deep CFR / SD-CFR / ESCHER, NFSP, PSRO &
   variants, IS-MCTS, continual/subgame solving, ReBeL & RL+search, MMD/NeuRD.
+- **Scientific validity:** formal game model, solution concept, theorem assumptions,
+  construct/internal/external validity, abstraction validity, and contribution level.
+- **Peer-review pressure:** every consequential decision is challenged against an
+  elite reviewer standard before it becomes part of the research plan or claim.
 - **Metrics:** exploitability / NashConv, LBR, win-rate with Wilson CIs, Elo/Glicko,
   alpha-rank, AIVAT — and how to avoid metric artifacts.
 - **Practice:** OpenSpiel recipes (with pointers to RLCard / PokerRL), experimental
@@ -34,6 +38,7 @@ imperfect-info-rl-researcher/
 ├── SKILL.md                       # persona, principles, workflow, and router (loaded first)
 ├── references/                    # loaded on demand
 │   ├── algorithms.md              # taxonomy + when to use what + failure modes
+│   ├── scientific-validity.md      # formal model, assumptions, validity threats, contribution criteria
 │   ├── metrics-and-evaluation.md  # exploitability, NashConv, LBR, CIs, Elo, alpha-rank, AIVAT
 │   ├── experimental-protocol.md   # hypothesis-driven workflow + common failure modes
 │   ├── landmark-systems.md        # Cepheus/DeepStack/Libratus/Pluribus/ReBeL/… + compute calibration
